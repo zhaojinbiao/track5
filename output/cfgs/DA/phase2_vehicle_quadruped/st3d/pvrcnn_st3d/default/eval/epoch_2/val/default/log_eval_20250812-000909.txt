@@ -1,0 +1,292 @@
+2025-08-12 00:09:09,097 test.py main 174  INFO  **********************Start logging**********************
+2025-08-12 00:09:09,097 test.py main 176  INFO  CUDA_VISIBLE_DEVICES=ALL
+2025-08-12 00:09:09,127 test.py main 178  INFO  GPU_NAME=NVIDIA GeForce RTX 4090
+2025-08-12 00:09:09,127 test.py main 183  INFO  cfg_file         ./cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d.yaml
+2025-08-12 00:09:09,127 test.py main 183  INFO  batch_size       2
+2025-08-12 00:09:09,127 test.py main 183  INFO  workers          8
+2025-08-12 00:09:09,127 test.py main 183  INFO  extra_tag        default
+2025-08-12 00:09:09,127 test.py main 183  INFO  ckpt             ../output/cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d/default/ckpt/checkpoint_epoch_2.pth
+2025-08-12 00:09:09,127 test.py main 183  INFO  launcher         none
+2025-08-12 00:09:09,127 test.py main 183  INFO  tcp_port         18888
+2025-08-12 00:09:09,127 test.py main 183  INFO  local_rank       0
+2025-08-12 00:09:09,127 test.py main 183  INFO  set_cfgs         None
+2025-08-12 00:09:09,127 test.py main 183  INFO  max_waiting_mins 30
+2025-08-12 00:09:09,127 test.py main 183  INFO  start_epoch      0
+2025-08-12 00:09:09,127 test.py main 183  INFO  eval_tag         default
+2025-08-12 00:09:09,127 test.py main 183  INFO  eval_all         False
+2025-08-12 00:09:09,127 test.py main 183  INFO  ckpt_dir         None
+2025-08-12 00:09:09,127 test.py main 183  INFO  save_to_file     False
+2025-08-12 00:09:09,127 test.py main 183  INFO  eval_fov_only    False
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.ROOT_DIR: /root/autodl-tmp/track5
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.LOCAL_RANK: 0
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.CLASS_NAMES: ['Car']
+2025-08-12 00:09:09,127 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG = edict()
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.DATASET: PI3DET_Dataset
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.DATA_PATH: ../data/pi3det
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.POINT_CLOUD_RANGE: [0, -75.2, -2, 75.2, 75.2, 4]
+2025-08-12 00:09:09,127 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG.DATA_SPLIT = edict()
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.DATA_SPLIT.train: train
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.DATA_SPLIT.test: val
+2025-08-12 00:09:09,127 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG.INFO_PATH = edict()
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.INFO_PATH.train: ['pi3det_infos_train.pkl']
+2025-08-12 00:09:09,127 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.INFO_PATH.test: ['pi3det_infos_train.pkl']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.GET_ITEM_LIST: ['points']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.FOV_POINTS_ONLY: False
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG.DATA_AUGMENTOR = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.DISABLE_AUG_LIST: ['placeholder']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.AUG_CONFIG_LIST: [{'NAME': 'random_object_rotation', 'ROT_PROB': 0.8, 'ROT_UNIFORM_NOISE': [-0.38539816, 0.38539816]}, {'NAME': 'random_world_flip', 'ALONG_AXIS_LIST': ['x']}, {'NAME': 'random_world_rotation', 'WORLD_ROT_ANGLE': [-0.3925, 0.3925]}, {'NAME': 'random_world_scaling', 'WORLD_SCALE_RANGE': [0.95, 1.05]}]
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG.POINT_FEATURE_ENCODING = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.encoding_type: absolute_coordinates_encoding
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.used_feature_list: ['x', 'y', 'z', 'intensity', 'timestamp']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.src_feature_list: ['x', 'y', 'z', 'intensity', 'timestamp']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.DATA_PROCESSOR: [{'NAME': 'mask_points_and_boxes_outside_range', 'REMOVE_OUTSIDE_BOXES': True}, {'NAME': 'shuffle_points', 'SHUFFLE_ENABLED': {'train': True, 'test': False}}, {'NAME': 'transform_points_to_voxels', 'VOXEL_SIZE': [0.1, 0.1, 0.15], 'MAX_POINTS_PER_VOXEL': 5, 'MAX_NUMBER_OF_VOXELS': {'train': 80000, 'test': 90000}}]
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG._BASE_CONFIG_: cfgs/dataset_configs/pi3det/DA/da_pi3det_dataset.yaml
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG.SHIFT_COOR: [0.0, 0.0, 1.5]
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG_TAR = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.DATASET: PI3DET_Dataset
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.DATA_PATH: ../data/pi3det
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.POINT_CLOUD_RANGE: [0, -75.2, -2, 75.2, 75.2, 4]
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG_TAR.DATA_SPLIT = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.DATA_SPLIT.train: train
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.DATA_SPLIT.test: val
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG_TAR.INFO_PATH = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.INFO_PATH.train: ['pi3det_infos_val.pkl']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.INFO_PATH.test: ['pi3det_infos_val.pkl']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.GET_ITEM_LIST: ['points']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.FOV_POINTS_ONLY: False
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG_TAR.DATA_AUGMENTOR = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.DATA_AUGMENTOR.DISABLE_AUG_LIST: ['placeholder']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.DATA_AUGMENTOR.AUG_CONFIG_LIST: [{'NAME': 'random_object_rotation', 'ROT_PROB': 0.8, 'ROT_UNIFORM_NOISE': [-0.38539816, 0.38539816]}, {'NAME': 'random_world_flip', 'ALONG_AXIS_LIST': ['x']}, {'NAME': 'random_world_rotation', 'WORLD_ROT_ANGLE': [-0.3925, 0.3925]}, {'NAME': 'random_world_scaling', 'WORLD_SCALE_RANGE': [0.97, 1.03]}, {'NAME': 'random_global_rotation_xy', 'WORLD_ROT_ANGLE': [-0.08726646, 0.08726646]}]
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.DATA_CONFIG_TAR.POINT_FEATURE_ENCODING = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.POINT_FEATURE_ENCODING.encoding_type: absolute_coordinates_encoding
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.POINT_FEATURE_ENCODING.used_feature_list: ['x', 'y', 'z', 'intensity', 'timestamp']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.POINT_FEATURE_ENCODING.src_feature_list: ['x', 'y', 'z', 'intensity', 'timestamp']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.DATA_PROCESSOR: [{'NAME': 'mask_points_and_boxes_outside_range', 'REMOVE_OUTSIDE_BOXES': True}, {'NAME': 'shuffle_points', 'SHUFFLE_ENABLED': {'train': True, 'test': False}}, {'NAME': 'transform_points_to_voxels', 'VOXEL_SIZE': [0.1, 0.1, 0.15], 'MAX_POINTS_PER_VOXEL': 5, 'MAX_NUMBER_OF_VOXELS': {'train': 80000, 'test': 90000}}]
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR._BASE_CONFIG_: cfgs/dataset_configs/pi3det/DA/da_pi3det_dataset.yaml
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.TARGET: True
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.CLASS_NAMES: ['Car']
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.USE_PSEUDO_LABEL: True
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.DATA_CONFIG_TAR.SHIFT_COOR: [0.0, 0.0, 2.2]
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.MODEL = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.MODEL.NAME: VoxelRCNN
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.MODEL.VFE = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.MODEL.VFE.NAME: MeanVFE
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.MODEL.BACKBONE_3D = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.MODEL.BACKBONE_3D.NAME: VoxelBackBone8x
+2025-08-12 00:09:09,128 config.py log_config_to_file 10  INFO  
+cfg.MODEL.MAP_TO_BEV = edict()
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.MODEL.MAP_TO_BEV.NAME: HeightCompression
+2025-08-12 00:09:09,128 config.py log_config_to_file 13  INFO  cfg.MODEL.MAP_TO_BEV.NUM_BEV_FEATURES: 256
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.BACKBONE_2D = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.BACKBONE_2D.NAME: BaseBEVBackbone
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.BACKBONE_2D.LAYER_NUMS: [5, 5]
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.BACKBONE_2D.LAYER_STRIDES: [1, 2]
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.BACKBONE_2D.NUM_FILTERS: [64, 128]
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.BACKBONE_2D.UPSAMPLE_STRIDES: [1, 2]
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.BACKBONE_2D.NUM_UPSAMPLE_FILTERS: [128, 128]
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.DENSE_HEAD = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.NAME: AnchorHeadSingle
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.CLASS_AGNOSTIC: False
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.USE_DIRECTION_CLASSIFIER: True
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.DIR_OFFSET: 0.78539
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.DIR_LIMIT_OFFSET: 0.0
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.NUM_DIR_BINS: 2
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.ANCHOR_GENERATOR_CONFIG: [{'class_name': 'Car', 'anchor_sizes': [[3.9, 1.6, 1.56]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [-1.78], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.6, 'unmatched_threshold': 0.45}]
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NAME: AxisAlignedTargetAssigner
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.POS_FRACTION: -1.0
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.SAMPLE_SIZE: 512
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NORM_BY_NUM_EXAMPLES: False
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.MATCH_HEIGHT: False
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.BOX_CODER: ResidualCoder
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.cls_weight: 1.0
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.loc_weight: 2.0
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.dir_weight: 0.2
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NAME: VoxelRCNNHead
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.CLASS_AGNOSTIC: True
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.SHARED_FC: [256, 256]
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.CLS_FC: [256, 256]
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.REG_FC: [256, 256]
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.DP_RATIO: 0.3
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_TYPE: nms_gpu
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.MULTI_CLASSES_NMS: False
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_PRE_MAXSIZE: 9000
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_POST_MAXSIZE: 512
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_THRESH: 0.8
+2025-08-12 00:09:09,129 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST = edict()
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_TYPE: nms_gpu
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.MULTI_CLASSES_NMS: False
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.USE_FAST_NMS: False
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.SCORE_THRESH: 0.0
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_PRE_MAXSIZE: 2048
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_POST_MAXSIZE: 100
+2025-08-12 00:09:09,129 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_THRESH: 0.7
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.FEATURES_SOURCE: ['x_conv2', 'x_conv3', 'x_conv4']
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.PRE_MLP: True
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.GRID_SIZE: 6
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv2 = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv2.MLPS: [[32, 32]]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv2.QUERY_RANGES: [[4, 4, 4]]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv2.POOL_RADIUS: [0.4]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv2.NSAMPLE: [16]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv2.POOL_METHOD: max_pool
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv3 = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv3.MLPS: [[32, 32]]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv3.QUERY_RANGES: [[4, 4, 4]]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv3.POOL_RADIUS: [0.8]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv3.NSAMPLE: [16]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv3.POOL_METHOD: max_pool
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv4 = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv4.MLPS: [[32, 32]]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv4.QUERY_RANGES: [[4, 4, 4]]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv4.POOL_RADIUS: [1.6]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv4.NSAMPLE: [16]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_LAYERS.x_conv4.POOL_METHOD: max_pool
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.TARGET_CONFIG = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.BOX_CODER: ResidualCoder
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.ROI_PER_IMAGE: 128
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.FG_RATIO: 0.5
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.SAMPLE_ROI_BY_EACH_CLASS: True
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_SCORE_TYPE: roi_iou
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_FG_THRESH: 0.75
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH: 0.25
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH_LO: 0.1
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.HARD_BG_RATIO: 0.8
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.REG_FG_THRESH: 0.55
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CLS_LOSS: BinaryCrossEntropy
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.REG_LOSS: smooth-l1
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CORNER_LOSS_REGULARIZATION: True
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.GRID_3D_IOU_LOSS: False
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_cls_weight: 1.0
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_reg_weight: 1.0
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_corner_weight: 1.0
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_iou3d_weight: 1.0
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.POST_PROCESSING = edict()
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.SCORE_THRESH: 0.3
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.OUTPUT_RAW_SCORE: False
+2025-08-12 00:09:09,130 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.EVAL_METRIC: kitti
+2025-08-12 00:09:09,130 config.py log_config_to_file 10  INFO  
+cfg.MODEL.POST_PROCESSING.NMS_CONFIG = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.MULTI_CLASSES_NMS: False
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_TYPE: nms_gpu
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_THRESH: 0.1
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_PRE_MAXSIZE: 4096
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_POST_MAXSIZE: 500
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.OPTIMIZATION = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.BATCH_SIZE_PER_GPU: 2
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.NUM_EPOCHS: 2
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.OPTIMIZER: adam_onecycle
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.LR: 0.01
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.WEIGHT_DECAY: 0.01
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.MOMENTUM: 0.9
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.MOMS: [0.95, 0.85]
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.PCT_START: 0.4
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.DIV_FACTOR: 10
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.DECAY_STEP_LIST: [35, 45]
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.LR_DECAY: 0.1
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.LR_CLIP: 1e-07
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.LR_WARMUP: False
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.WARMUP_EPOCH: 1
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.OPTIMIZATION.GRAD_NORM_CLIP: 10
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.SELF_TRAIN = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.SELF_TRAIN.SRC = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.SRC.USE_DATA: False
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.SRC.USE_GRAD: False
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.SRC.LOSS_WEIGHT: 1.0
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.SELF_TRAIN.TAR = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.TAR.USE_DATA: True
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.TAR.LOSS_WEIGHT: 1.0
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.SCORE_THRESH: [0.5]
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.NEG_THRESH: [0.2]
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.UPDATE_PSEUDO_LABEL: [0]
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.UPDATE_PSEUDO_LABEL_INTERVAL: 4
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.INIT_PS: None
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.SELF_TRAIN.PROG_AUG = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.PROG_AUG.ENABLED: False
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.PROG_AUG.UPDATE_AUG: [5, 10, 20, 25]
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.PROG_AUG.SCALE: 1.1
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.SELF_TRAIN.MEMORY_ENSEMBLE = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.ENABLED: False
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.NAME: consistency_ensemble
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.IOU_THRESH: 0.1
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.SELF_TRAIN.MEMORY_ENSEMBLE.NMS_CONFIG = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.NMS_CONFIG.NMS_TYPE: nms_gpu
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.NMS_CONFIG.MULTI_CLASSES_NMS: False
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.NMS_CONFIG.NMS_PRE_MAXSIZE: 512
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.NMS_CONFIG.NMS_POST_MAXSIZE: 100
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.NMS_CONFIG.NMS_THRESH: 0.1
+2025-08-12 00:09:09,131 config.py log_config_to_file 10  INFO  
+cfg.SELF_TRAIN.MEMORY_ENSEMBLE.MEMORY_VOTING = edict()
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.MEMORY_VOTING.ENABLED: True
+2025-08-12 00:09:09,131 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.MEMORY_VOTING.IGNORE_THRESH: 2
+2025-08-12 00:09:09,132 config.py log_config_to_file 13  INFO  cfg.SELF_TRAIN.MEMORY_ENSEMBLE.MEMORY_VOTING.RM_THRESH: 3
+2025-08-12 00:09:09,132 config.py log_config_to_file 13  INFO  cfg.TAG: voxelrcnn_st3d
+2025-08-12 00:09:09,132 config.py log_config_to_file 13  INFO  cfg.EXP_GROUP_PATH: cfgs/DA/phase1_vehicle_drone/st3d
+2025-08-12 00:09:09,132 pi3det_dataset.py include_pi3det_data 33  INFO  Loading Pi3Det dataset
+2025-08-12 00:09:09,144 pi3det_dataset.py include_pi3det_data 45  INFO  Total samples for Pi3Det dataset: 5885
+2025-08-12 00:09:09,324 detector3d_template.py load_params_from_file 389  INFO  ==> Loading parameters from checkpoint ../output/cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d/default/ckpt/checkpoint_epoch_2.pth to GPU
+2025-08-12 00:09:09,401 detector3d_template.py load_params_from_file 396  INFO  ==> Checkpoint trained from version: pcdet+0.6.0+91576b3
+2025-08-12 00:09:09,410 detector3d_template.py load_params_from_file 404  INFO  ==> Done (loaded 257/257)
+2025-08-12 00:09:09,421 eval_utils.py eval_one_epoch 41  INFO  *************** EPOCH 2 EVALUATION *****************
+2025-08-12 00:10:41,212 eval_utils.py eval_one_epoch 82  INFO  *************** Performance of EPOCH 2 *****************
+2025-08-12 00:10:41,212 eval_utils.py eval_one_epoch 84  INFO  Generate label finished(sec_per_example: 0.0156 second).
+2025-08-12 00:10:41,212 eval_utils.py eval_one_epoch 100  INFO  recall_roi_0.3: 0.000000
+2025-08-12 00:10:41,212 eval_utils.py eval_one_epoch 101  INFO  recall_rcnn_0.3: 0.000000
+2025-08-12 00:10:41,213 eval_utils.py eval_one_epoch 100  INFO  recall_roi_0.5: 0.000000
+2025-08-12 00:10:41,213 eval_utils.py eval_one_epoch 101  INFO  recall_rcnn_0.5: 0.000000
+2025-08-12 00:10:41,213 eval_utils.py eval_one_epoch 100  INFO  recall_roi_0.7: 0.000000
+2025-08-12 00:10:41,213 eval_utils.py eval_one_epoch 101  INFO  recall_rcnn_0.7: 0.000000
+2025-08-12 00:10:41,217 eval_utils.py eval_one_epoch 108  INFO  Average predicted number of objects(5885 samples): 3.310
+2025-08-12 00:10:41,331 eval_utils.py eval_one_epoch 120  INFO  No ground-truth boxes for evaluation
+2025-08-12 00:10:41,331 eval_utils.py eval_one_epoch 123  INFO  Result is save to /root/autodl-tmp/track5/output/cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d/default/eval/epoch_2/val/default
+2025-08-12 00:10:41,331 eval_utils.py eval_one_epoch 124  INFO  ****************Evaluation done.*****************
