@@ -41,7 +41,15 @@ python test.py --cfg_file ${CONFIG_FILE} --ckpt ${CKPT}
 ```
 ### ckpt and checkpoint file
 ```shell script
-ckpt file:
+   ckpt file:
       ./cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d.yaml
       ./cfgs/DA/phase2_vehicle_quadruped/pvrcnn_st3d.yaml    
+```
+```shell script
+   cfg_file:
+      ./cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d.yaml
+      ./cfgs/DA/phase2_vehicle_quadruped/pvrcnn_st3d.yaml
+   result.pkl:
+      1.output/cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d/default/eval/epoch_2/val/default/result.pkl
+      2.output/cfgs/DA/phase2_vehicle_quadruped/st3d/pvrcnn_st3d/default/eval/epoch_2/val/default/result.pkl    
 ```
