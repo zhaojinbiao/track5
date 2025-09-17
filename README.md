@@ -2,7 +2,7 @@
 
 ### Requirements
 All the codes are tested in the following environment:
-* Linux (trained on Ubuntu 22.04)
+* Linux (trained on Ubuntu 22.04 / gpu RTX4090ti)
 * Python 3.8
 * PyTorch 2.1
 * CUDA 11.8 or higher (PyTorch 2.1+ needs CUDA 11.8)
