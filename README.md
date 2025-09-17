@@ -33,16 +33,9 @@ c. Install this `pcdet` library and its dependent libraries by running the follo
 ```shell
 python setup.py develop
 ```
-## Training & Testing
-
-
+## Testing
 ### Test and evaluate the pretrained models
 * Test with a pretrained model: 
 ```shell script
-python test.py --cfg_file ${CONFIG_FILE} --batch_size ${BATCH_SIZE} --ckpt ${CKPT}
-```
-
-* To test all the saved checkpoints of a specific training setting and draw the performance curve on the Tensorboard, add the `--eval_all` argument: 
-```shell script
-python test.py --cfg_file ${CONFIG_FILE} --batch_size ${BATCH_SIZE} --eval_all
+python test.py --cfg_file ${CONFIG_FILE} --ckpt ${CKPT}
 ```
