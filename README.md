@@ -35,7 +35,7 @@ python setup.py develop
 ```
 ## Testing
 ### Test and evaluate the pretrained models
-* Test with a pretrained model: 
+* Test with a  model: 
 ```shell script
 python test.py --cfg_file ${CONFIG_FILE} --ckpt ${CKPT}
 ```
