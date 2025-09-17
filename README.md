@@ -40,9 +40,8 @@ python setup.py develop
 python test.py --cfg_file ${CONFIG_FILE} --ckpt ${CKPT}
 ```
 ### ckpt and checkpoint file
-'''shell script
+```shell script
 ckpt file:
       ./cfgs/DA/phase1_vehicle_drone/st3d/voxelrcnn_st3d.yaml
-      ./cfgs/DA/phase2_vehicle_quadruped/pvrcnn_st3d.yaml
-      
-'''
+      ./cfgs/DA/phase2_vehicle_quadruped/pvrcnn_st3d.yaml    
+```
